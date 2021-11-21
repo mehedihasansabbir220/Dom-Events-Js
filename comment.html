@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+</head>
+
+<body>
+    <section>
+        <h1>my comment section here!!!!</h1>
+        <div id="my-comment">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, nam facere odio sint omnis iure
+                consequuntur pariatur eius obcaecati. Sequi explicabo id veniam quis quasi delectus architecto ut
+                impedit laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, nam facere odio sint omnis iure
+                consequuntur pariatur eius obcaecati. Sequi explicabo id veniam quis quasi delectus architecto ut
+                impedit laborum.</p>
+        </div>
+        <div>
+            <textarea name="" id="New-comment" cols="60" rows="5"></textarea>
+            <br>
+            <button id="subbmit">subbmit</button>
+        </div>
+    </section>
+    <script>
+        //1.add button even handaler
+
+        document.getElementById("subbmit").addEventListener("click", function () {
+            //2.get user coment 
+            const newComment = document.getElementById('New-comment');
+            const commentValue = newComment.value;
+            //3.create pragarph
+
+            const userComment = document.createElement('p');
+            userComment.innerText = commentValue;
+
+            //4.append the comment
+            const commentconatiner = document.getElementById('my-comment');
+            commentconatiner.appendChild(userComment);
+
+            //5.clean the comment value
+            newComment.value = '';
+
+
+        }
+        );
+    </script>
+
+</body>
+
+</html>
